@@ -17,15 +17,19 @@
             BorderBrush="Aqua"
             BorderThickness="3 3 1 1"
             Margin="2 0 2 2"
-            Height="50"
+            Height="60"
             >
             <TextBox x:Name="textBox" Text="" FontFamily="Arial" FontSize="30" TextAlignment="Right" VerticalAlignment="Bottom"/>            
         </Border>
         <Label x:Name="label"  FontFamily="Arial" FontSize="30" VerticalAlignment="Bottom"/>
-        <UniformGrid Rows="5" Columns="4" Grid.Row="1">
+        <UniformGrid Rows="6" Columns="4" Grid.Row="1">
             <Button Content="CE" Background="#FF4DE484" Click="Button_Click_17"/>
             <Button Content="C" Background="#FF4DE484" Click="Button_Click_16"/>
             <Button Content="←" Background="#FF4DE484" Click="Button_Click_18"/>
+            <Button Content="1/x" Background="#FF4DE484" Click="Button_Click_20"/>
+            <Button Content="xʸ" Background="#FF4DE484" Click="Button_Click_23"/>
+            <Button Content="√x" Background="#FF4DE484" Click="Button_Click_22"/>
+            <Button Content="%" Background="#FF4DE484" Click="Button_Click_21"/>
             <Button Content="/" Background="#FF4DE484" Click="Button_Click_14"/>
             <Button Content="7" Click="Button_Click_7" Background="#FFF0FF90"/>
             <Button Content="8" Click="Button_Click_8" Background="#FFF0FF90"/>

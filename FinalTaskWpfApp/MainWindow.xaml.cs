@@ -20,7 +20,7 @@ namespace FinalTaskWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        double a, b;
+        double a, b, c;
         int count;
         bool sign = true;
 
@@ -148,6 +148,54 @@ namespace FinalTaskWpfApp
             }
         }
 
+        private void Button_Click_20(object sender, RoutedEventArgs e)
+        {
+
+            a = Convert.ToDouble(textBox.Text);
+            textBox.Clear();
+            if (a != 0)
+            {
+                b = 1 / a;
+                label.Content = $"1/{a}";
+                sign = true;
+                textBox.Text = Convert.ToString(b);
+            }
+            else textBox.Text = "Деление на ноль невозможно";
+        }
+
+        private void Button_Click_21(object sender, RoutedEventArgs e)
+        {
+            b = Convert.ToDouble(textBox.Text);
+            textBox.Clear();
+            label.Content = b.ToString() + "%";
+            sign = true;
+            c = a * b / 100;
+            textBox.Text = Convert.ToString(c);
+        }
+
+        private void Button_Click_22(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToDouble(textBox.Text);
+            textBox.Clear();
+            if (a >= 0)
+            {
+                b = Math.Sqrt(a);
+                textBox.Text = Convert.ToString(b);
+                label.Content = $"√{a}";
+                sign = true;
+            }
+            else textBox.Text = "Неверный ввод";
+        }
+
+        private void Button_Click_23(object sender, RoutedEventArgs e)
+        {
+            a = Convert.ToDouble(textBox.Text);
+            textBox.Clear();
+            count = 5;
+            label.Content = a.ToString() + $"степень?";
+            sign = true;
+        }
+
         private void Button_Click_19(object sender, RoutedEventArgs e)
         {
             if (sign == true)
@@ -160,34 +208,33 @@ namespace FinalTaskWpfApp
                 textBox.Text = textBox.Text.Replace("-", "");
                 sign = true;
             }
-        }       
+        }
 
         private void calculate()
         {
-
+            b = Convert.ToDouble(textBox.Text);
             switch (count)
             {
                 case 1:
-                    b = a + Convert.ToDouble(textBox.Text);
-                    textBox.Text = b.ToString();
+                    c = a + b;
                     break;
                 case 2:
-                    b = a - Convert.ToDouble(textBox.Text);
-                    textBox.Text = b.ToString();
+                    c = a - b;
                     break;
                 case 3:
-                    b = a * Convert.ToDouble(textBox.Text);
-                    textBox.Text = b.ToString();
+                    c = a * b;
                     break;
                 case 4:
-                    b = a / Convert.ToDouble(textBox.Text);
-                    textBox.Text = b.ToString();
+                    c = a / b;
                     break;
-                
+                case 5:
+                    c = Math.Pow(a, b);
+                    break;
+
                 default:
                     break;
             }
-
+            textBox.Text = Convert.ToString(c);
         }
     }
 }
